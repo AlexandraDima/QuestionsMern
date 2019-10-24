@@ -133,7 +133,7 @@ class Db {
 module.exports.connectDb = async () => {
   const url = process.env.MONGO_URL || "mongodb://localhost/questions-db";
   return mongoose
-    .connect(url, { useNewUrlParser: true })
+    .connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => {
       console.log("Questions database connected");
       return new Db();
