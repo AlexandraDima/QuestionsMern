@@ -8,7 +8,7 @@ const morgan = require("morgan"); // Log out all http requests to the console
 const appName = "Express API Template";
 const app = express(); // Get the express app.
 const hostname = "localhost";
-const port = 8080; // Pick either port 8080 or the port in the PORT env variable.
+const port = process.env.PORT || 8080; // Pick either port 8080 or the port in the PORT env variable.
 
 //Using the depencies
 //server.use(bodyParser.json()); // Parse JSON from the request body
