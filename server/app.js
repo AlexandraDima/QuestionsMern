@@ -7,7 +7,6 @@ const morgan = require("morgan"); // Log out all http requests to the console
 //Configuration
 const appName = "Express API Template";
 const app = express(); // Get the express app.
-const hostname = "localhost";
 const port = process.env.PORT || 8080; // Pick either port 8080 or the port in the PORT env variable.
 
 //Using the depencies
@@ -81,7 +80,7 @@ require("./db")
     await db.randomQuestions(); // Fill in test data if needed.
 
     // When DB connection is ready, let's open the API for access
-    app.listen(port, hostname, () => {
+    app.listen(port, () => {
       console.log(`${appName} API running on port ${port}!`);
     });
   })
