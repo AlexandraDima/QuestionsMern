@@ -11,7 +11,6 @@ const port = process.env.PORT || 8080; // Pick either port 8080 or the port in t
 
 //Using the depencies
 //server.use(bodyParser.json()); // Parse JSON from the request body
-
 app.use(bodyParser.json());
 app.use(cors()); // Enable Cross Origin Resource Sharing across all routes. Basically open up your API to everyone.
 app.use(morgan("combined"));
@@ -44,19 +43,6 @@ app.post("/api/questions/:questionId/answers", (request, response) => {
   db.postAnswer(request.params.questionId, request.body) // request.body is an answer object
     .then(updatedQuestion => response.json(updatedQuestion));
 });
-
-/*Update AnswerId
-app.put('/api/questions/:questionId/answers/:answerId', (request, response) => {
-    //Path parameter
-    const question = questions.find(question => question.id === parseInt(request.params.questionId));
-    const answer = question.answers.find(answer => answer.id === Number(request.params.answerId));
-  
-    answer.text = request.body.text;
-  
-    response.json({ msg: "Answer updated", answer});
-    
-});
-*/
 
 //Update Vote
 app.put(
