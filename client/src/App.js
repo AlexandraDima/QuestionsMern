@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Router } from "@reach/router";
 import Question from "./Question";
 import Questions from "./Questions";
+import Nav from "./Nav";
 
 class App extends Component {
   //Initialize the state data of questions
@@ -58,34 +59,7 @@ class App extends Component {
         console.log(json);
         this.getData();
       }); // Get the data
-    //let json = await result.json(); // Turn it into json
-    //return this.setState({
-    // Set it in the state
-    //questions: json
-    //});
   }
-
-  /*
-  putVote(questionId, answerId) {
-    const url = "http://localhost:8080/api/questions/"
-      .concat(questionId)
-      .concat("/answers/")
-      .concat(answerId)
-      .concat("/vote");
-    fetch(url, {
-      method: "PUT",
-      headers: {
-        "Content-type": "application/json; charset=UTF-8"
-      }
-    })
-      .then(response => response.json())
-      .then(json => {
-        console.log("Result of posting a new question:");
-        console.log(json);
-        this.getData();
-      });
-  }
-  */
 
   handleVote(questionId, answerId) {
     //PUT
@@ -149,8 +123,25 @@ class App extends Component {
 
   render() {
     return (
-      <React.Fragment>
-        <h1>QA website</h1>
+      <main className="container">
+        {/*  <Nav> is not a target for routing, so we put it outside of <Router>
+         *  It will appear as a header on each page.
+         */}
+        <Nav />
+        <div className="jumbotron">
+          <div className="d-flex flex-row-reverse p-5">
+            <div className="d-none d-sm-block">
+              <h1>
+                The best place
+                <br></br>to find your answers
+              </h1>
+              <h5>
+                QuestionsExchange is a question and answer site
+                <br></br>for web developers
+              </h5>
+            </div>
+          </div>
+        </div>
 
         <Router>
           {/*
@@ -171,7 +162,7 @@ class App extends Component {
             askQuestion={text => this.askQuestion(text)}
           ></Questions>
         </Router>
-      </React.Fragment>
+      </main>
     );
   }
 }

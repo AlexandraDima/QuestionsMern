@@ -28,19 +28,27 @@ class AskQuestion extends Component {
 
   render() {
     return (
-      <div className="card">
+      <div className="card askQuestion col-lg-8">
         <div className="card-body">
           <form>
-            <div className="form-group">
-              <label htmlFor="questionObject">New question</label>
-              <input
-                onChange={event => this.onChange(event)}
-                type="text"
-                placeholder="Ask a new question"
-              />
-              <button onClick={event => this.onClick(event)}>
-                Ask question
-              </button>
+            <div className="form-row align-items-center">
+              <div className="col-md-9">
+                <input
+                  onChange={event => this.onChange(event)}
+                  type="text"
+                  placeholder="Ask a new question"
+                  className="form-control mb-2"
+                />
+              </div>
+              <div className="col-md-3">
+                <button
+                  type="submit"
+                  className="btn btn-info mb-2"
+                  onClick={event => this.onClick(event)}
+                >
+                  Ask question
+                </button>
+              </div>
             </div>
           </form>
         </div>

@@ -22,28 +22,40 @@ class Question extends Component {
       title = question.text;
       if (question.answers) {
         listAnswers = question.answers.map((answer, id) => (
-          <div key={answer._id} id={answer._id}>
-            <div>Votes: {answer.votes}</div>
-            <div>{answer.text}</div>
-            <button
-              onClick={() => this.props.handleVote(this.props.id, answer._id)}
-            >
-              Vote up
-            </button>
+          <div key={answer._id} id={answer._id} className="list-group ">
+            <div className="row list-group-horizontal-md  mb-3">
+              <div className="col-md-2 text-center list-group-item bg-light">
+                <div className="text-center">
+                  <i className="fa fa-heart fa-1x"></i>
+                  {answer.votes}
+                </div>
+                <button
+                  className="btn btn-info mb-1"
+                  onClick={() =>
+                    this.props.handleVote(this.props.id, answer._id)
+                  }
+                >
+                  Vote up
+                </button>
+              </div>
+              <div className="list-group-item col-md-10">{answer.text}</div>
+            </div>
           </div>
         ));
       }
     }
     return (
-      <React.Fragment>
-        <h1>Question is:</h1>
-        <h2>{title}</h2>
-
+      <div className="m-5">
+        <div className="question card bg-cards text-center p-3 col-lg-4">
+          <h2>Question</h2>
+          <h4 className="card-title"> {title}</h4>
+        </div>
         <div>
           <h3>Answers</h3>
           <div>
             {listAnswers.length === 0 ? <p>No Answers!</p> : listAnswers}
           </div>
+
           <div>
             <PostAnswer
               qid={this.props.id}
@@ -53,9 +65,12 @@ class Question extends Component {
             />
           </div>
         </div>
-
-        <Link to="/">Go back</Link>
-      </React.Fragment>
+        <div className="mt-5">
+          <Link to="/">
+            <i className="fa fa-long-arrow-left fa-1x circle-icon"> </i>
+          </Link>
+        </div>
+      </div>
     );
   }
 }

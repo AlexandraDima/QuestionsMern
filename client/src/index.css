@@ -1,0 +1,85 @@
+body {
+  background-color: #f2f1ff !important;
+}
+.navbar-dark .navbar-nav .nav-link {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+a {
+  color: #201eaf;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+.titleWebsite {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.list-group,
+.askQuestion,
+.question,
+.postAnswer {
+  margin: 0 auto;
+}
+
+.bg-cards {
+  background-color: white !important;
+  box-shadow: 7px 7px 5px rgba(0, 0, 0, 0.1);
+}
+
+.card {
+  border: none;
+}
+
+@media (min-width: 576px) {
+  .card-columns {
+    -webkit-column-count: 4;
+    -moz-column-count: 4;
+    column-count: 4;
+  }
+}
+.circle-icon {
+  background: #201eaf;
+  color: white;
+  padding: 20px;
+  border-radius: 50%;
+}
+
+.circle-icon:hover {
+  opacity: 0.6;
+  background: #17a2b8;
+  color: #fff;
+}
+
+.card-title {
+  color: #201eaf;
+}
+.fa-heart {
+  color: #201eaf;
+  padding: 10px;
+}
+
+.btn {
+  color: #fff;
+  background-color: #201eaf;
+  text-align: center;
+  margin: 4px 2px;
+  transition: 0.3s;
+  border: none;
+}
+
+.btn:hover {
+  opacity: 0.6;
+  color: #fff;
+}
+.jumbotron {
+  background-image: url(./Images/banner-01.jpg);
+  margin-top: 56px;
+  background-repeat: no repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  height: 420px;
+  margin-bottom: 0;
+}
