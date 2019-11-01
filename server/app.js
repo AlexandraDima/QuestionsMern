@@ -96,22 +96,23 @@ app.put(
 );
 */
 /**** Start! ****/
+
 let db = {}; //Empty DB object
-//let db = require("./Models/db");
-
-/****************Routes */
-let usersRouter = require("./Routes/users_router")(users, secret);
-app.use("/api/users", usersRouter);
-
-let questionsRouter = require("./Routes/questions_router");
-app.use("/api/questions", questionsRouter);
 
 // Require and connect the questions
 require("./Models/db")
   .connectDb()
   .then(async dbObject => {
-    db = dbObject; // Save a copy of the db object for the routes above.
-    await db.randomQuestions(); // Fill in test data if needed.
+    //db = dbObject; // Save a copy of the db object for the routes above.
+    await dbObject.randomQuestions(); // Fill in test data if needed.
+    /****************Routes */
+    let usersRouter = require("./Routes/users_router")(users, secret);
+    app.use("/api/users", usersRouter);
+
+    //let db = require("./Models/db");
+
+    let questionsRouter = require("./Routes/questions_router")(dbObject);
+    app.use("/api/questions", questionsRouter);
 
     // When DB connection is ready, let's open the API for access
     app.listen(port, () => {
