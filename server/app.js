@@ -97,6 +97,7 @@ app.put(
 */
 /**** Start! ****/
 let db = {}; //Empty DB object
+//let db = require("./Models/db");
 
 /****************Routes */
 let usersRouter = require("./Routes/users_router")(users, secret);
@@ -106,7 +107,7 @@ let questionsRouter = require("./Routes/questions_router");
 app.use("/api/questions", questionsRouter);
 
 // Require and connect the questions
-require("./Models/questions")
+require("./Models/db")
   .connectDb()
   .then(async dbObject => {
     db = dbObject; // Save a copy of the db object for the routes above.
