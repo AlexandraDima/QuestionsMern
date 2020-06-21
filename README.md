@@ -9,4 +9,4 @@ The technology stack is basic MERN.
 
 The application does very little on it's own, but the project demonstrates how you can structure a simple MERN application into a server and a client directory for automated deployment.
 
-Example of the app running on Heroku: https://questions-website.herokuapp.com/
+Example of the app running on Heroku: https://questions-mern.herokuapp.com/
