@@ -1,12 +1,13 @@
-# MERN Heroku Example
+# QuestionsExchange 
 
-This is a small template for building MERN applications that can be deployed directly to Heroku using git. 
+The QuestionsExchange application is an easy way to ask different questions in Web Development. The user can also post answers to specific questions and vote the most relevant answers.
 
-The technology stack is basic MERN. 
-* Client is written in React
-* Server is a node.js application using express.js
-* Mongoose is used to persist data to MongoDB
+This is a basic MERN application that has been deployed directly to Heroku using git.
 
-The application does very little on it's own, but the project demonstrates how you can structure a simple MERN application into a server and a client directory for automated deployment.
+The technology:
 
-Example of the app running on Heroku: https://questions-mern.herokuapp.com/
+- Client is written in React
+- Server is a Node.js application using Express.js
+- Mongoose is used to persist data to MongoDB
+The application performs CRUD operations on the /questions endpoint.
+
